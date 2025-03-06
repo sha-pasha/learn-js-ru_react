@@ -1,1 +1,1 @@
-# learn-js-ru_react
+# Project for learning react v19
