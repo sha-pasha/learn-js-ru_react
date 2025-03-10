@@ -12,26 +12,26 @@ reactRoot.render(
                 <h2 style={{textAlign: 'center'}}>{item.name}</h2>
                 <h3>Menu</h3>
                 <ul className="menu">
-                    {item.menu.map(dish => (
-                        <li key={dish.id}>
+                    {item.menu.map(({id, name, price, ingredients}) => (
+                        <li key={id}>
                             <p>
-                                {dish.name} - ${dish.price}
+                                {name} - ${price}
                             </p>
                             <i>
-                                {dish.ingredients.join(', ')}
+                                {ingredients.join(', ')}
                             </i>
                         </li>
                     ))}
                 </ul>
                 <h3>Reviews</h3>
                 <ul className="reviews-list">
-                    {item.reviews.map(review => (
-                        <li key={review.id} className="review">
+                    {item.reviews.map(({id, user, text}) => (
+                        <li key={id} className="review">
                             <h5 className="review-user">
-                                {review.user}
+                                {user}
                             </h5>
                             <i>
-                                {review.text}
+                                {text}
                             </i>
                         </li>
                     ))}
