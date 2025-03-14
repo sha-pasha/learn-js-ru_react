@@ -4,7 +4,7 @@ import {useState} from "react";
 import cn from "classnames";
 
 export function RestaurantPage() {
-  const [activeRestaurant, setActiveRestaurants] = useState(restaurants[0].id);
+  const [activeRestaurantId, setActiveRestaurantsId] = useState(restaurants[0].id);
 
   const findRestaurant = (id) => restaurants.find(item => item.id === id);
 
@@ -14,10 +14,10 @@ export function RestaurantPage() {
         {restaurants.map(({name, id}) => (
           <div
             key={id}
-            onClick={() => setActiveRestaurants(id)}
+            onClick={() => setActiveRestaurantsId(id)}
             className={cn(
               "tab",
-              {["active-tab"]: activeRestaurant === id}
+              {["active-tab"]: activeRestaurantId === id}
             )}
           >
             {name}
@@ -25,8 +25,8 @@ export function RestaurantPage() {
         ))}
       </div>
 
-      {!!activeRestaurant
-        && <Restaurant restaurant={findRestaurant(activeRestaurant)}/>
+      {!!activeRestaurantId
+        && <Restaurant restaurant={findRestaurant(activeRestaurantId)}/>
       }
     </div>
   )

@@ -5,7 +5,7 @@ import {Review} from "../Review/Review.jsx";
 export function Restaurant({restaurant}) {
 
   return (
-    <div key={restaurant.id} className="restaurant-card">
+    <div className="restaurant-card">
       <h2 style={{textAlign: 'center'}}>{restaurant.name}</h2>
 
       <Menu restaurant={restaurant}/>
