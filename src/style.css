@@ -2,6 +2,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: #333;
+    margin: 0;
 }
 
 p {
@@ -13,18 +14,85 @@ i {
     color: #444;
 }
 
-.container {
+.layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template: 100px auto 100px / 1fr;
+    grid-template-areas:
+            "header"
+            "content"
+            "footer";
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background: #eee;
+    font-size: 35px;
+    text-align: center;
+}
+
+footer {
+    grid-area: footer;
+    background: #333;
+    color: #eee;
+    font-size: 35px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.content {
+    grid-area: content;
+}
+
+.container {
     gap: 32px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+.tabs {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.tab {
+    padding: 4px;
+    margin: 4px 0;
+    border-radius: 4px;
+    background: #ddd;
+    cursor: pointer;
+    transition: .2s;
+    
+    &:hover {
+        background: #bbb;
+    }
+
+    &.active-tab {
+        background: #82ebae;
+        color: #111;
+    }
+}
+
+.counter {
+    display: flex;
+    gap: 4px;
+
+    div:first-child,
+    div:last-child {
+        width: 16px;
+        padding: 0 4px;
+        background: #ddd;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
 .restaurant-card {
     min-width: 320px;
     padding: 16px 24px;
-    border-radius: 24px;
+    border-radius: 8px;
     background: #e0f3e7;
 }
 
