@@ -1,5 +1,4 @@
 import {useForm} from "./useForm.js";
-import log from "eslint-plugin-react/lib/util/log.js";
 import {Counter} from "../Counter/Counter.jsx";
 
 export const ReviewForm = () => {
