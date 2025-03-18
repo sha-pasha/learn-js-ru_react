@@ -1,5 +1,6 @@
 import {Menu} from "../Menu/Menu.jsx";
 import {Review} from "../Review/Review.jsx";
+import {ReviewForm} from "../ReviewForm/ReviewForm.jsx";
 
 
 export function Restaurant({restaurant}) {
@@ -16,6 +17,7 @@ export function Restaurant({restaurant}) {
           <Review key={review.id} review={review}/>
         ))}
       </ul>
+      <ReviewForm />
     </div>
   )
 }
