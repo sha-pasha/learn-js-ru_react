@@ -1,14 +1,10 @@
-import {useCount} from "./useCount.js";
-
-
-export function Counter() {
-  const {count, increment, decrement} = useCount();
+export function Counter({count, increment, decrement}) {
 
   return (
     <div className="counter">
-      <div onClick={() => decrement()}>-</div>
+      <div onClick={decrement}>-</div>
       {count}
-      <div onClick={() => increment()}>+</div>
+      <div onClick={increment}>+</div>
     </div>
   )
 }

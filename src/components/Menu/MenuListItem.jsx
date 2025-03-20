@@ -1,4 +1,4 @@
-import {Counter} from "../Counter/Counter.jsx";
+import {DishCounter} from "./DishCouner.jsx";
 
 export function MenuListItem({dish}) {
   const {name, price, ingredients} = dish;
@@ -11,7 +11,7 @@ export function MenuListItem({dish}) {
       <i>
         {ingredients.join(', ')}
       </i>
-      <Counter />
+      <DishCounter />
     </li>
   )
 }
