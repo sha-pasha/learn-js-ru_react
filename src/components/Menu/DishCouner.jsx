@@ -1,15 +1,10 @@
-import {useState} from "react";
 import {Counter} from "../Counter/Counter.jsx";
-
-const MIN_COUNTER = 0;
-const MAX_COUNTER = 5
+import {useCount} from "./useCount.js";
 
 export const DishCounter = () => {
-  const [count, setCount] = useState(MIN_COUNTER);
-  const increment = () => setCount( Math.min(count + 1, MAX_COUNTER) );
-  const decrement = () => setCount(Math.max(count - 1, MIN_COUNTER) );
+    const {count, increment, decrement} = useCount();
 
-  return (
-    <Counter count={count} decrement={decrement} increment={increment}/>
-  )
+    return (
+        <Counter count={count} decrement={decrement} increment={increment}/>
+    )
 }
